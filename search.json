@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "budget-revenue.html",
+    "href": "budget-revenue.html",
+    "title": "Budget and Revenue",
+    "section": "",
+    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\n\nFigure 1 plots each film’s budget against its revenue.\n\nplt.scatter(films[\"budget_musd\"], films[\"revenue_musd\"])\nplt.xlabel(\"Budget (million USD)\")\nplt.ylabel(\"Revenue (million USD)\")\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Budget against revenue (million USD)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Box Office Numbers",
+    "section": "",
+    "text": "This website explores a dataset well-known films released between 1980 and 2025. For each film, it record the franchise, the product budget, and owrldwide revenue in millions of US dollars, the runtime, and the IMDb rating. The figures are rounded and not adjusted for inflation."
+  },
+  {
+    "objectID": "index.html#pages",
+    "href": "index.html#pages",
+    "title": "Box Office Numbers",
+    "section": "Pages",
+    "text": "Pages\n\nBudget and Revenue\nRuntime and Ratings\nThe Bond Films\n\nAI usage: I used Claude."
+  },
+  {
+    "objectID": "runtime-rating.html",
+    "href": "runtime-rating.html",
+    "title": "Runtime and Ratings",
+    "section": "",
+    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\n\nFigure 1 plots each film’s runtime against its IMDb rating.\n\nplt.scatter(films[\"runtime_min\"], films[\"imdb_rating\"])\nplt.xlabel(\"Runtime (minutes)\")\nplt.ylabel(\"IMDb rating\")\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Runtime against IMDb Rating\n\n\n\n\n\n\nfilms[\"decade\"] = films[\"year\"] // 10*10\nfilms.groupby(\"decade\")[\"imdb_rating\"].mean()\n\ndecade\n1980    8.007692\n1990    7.704762\n2000    7.936000\n2010    7.834483\n2020    7.443750\nName: imdb_rating, dtype: float64"
+  },
+  {
+    "objectID": "bond.html",
+    "href": "bond.html",
+    "title": "The Bond Films",
+    "section": "",
+    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\n\n\nbond = films[films[\"franchise\"] == \"James Bond\"]\nbond = bond.sort_values(\"year\")\nplt.plot(bond[\"year\"], bond[\"revenue_musd\"])\nplt.xlabel(\"year\")\nplt.ylabel(\"Revenue (million USD)\")\nplt.show()\n\n\n\n\n\n\n\n\nThe dataset covers Bond films from 1995 to 2021."
+  }
+]
