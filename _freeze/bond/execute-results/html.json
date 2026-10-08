@@ -1,0 +1,12 @@
+{
+  "hash": "0496f9b92d8c84a596ddf832e3aae516",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"The Bond Films\"\n---\n\n::: {#96a513ca .cell execution_count=1}\n``` {.python .cell-code}\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\n```\n:::\n\n\n::: {#74684375 .cell execution_count=2}\n``` {.python .cell-code}\nbond = films[films[\"franchise\"] == \"James Bond\"]\nbond = bond.sort_values(\"year\")\nplt.plot(bond[\"year\"], bond[\"revenue_musd\"])\nplt.xlabel(\"year\")\nplt.ylabel(\"Revenue (million USD)\")\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![](bond_files/figure-html/cell-3-output-1.png){width=602 height=430}\n:::\n:::\n\n\nThe dataset covers Bond films from 1995 to 2021.\n\n",
+    "supporting": [
+      "bond_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

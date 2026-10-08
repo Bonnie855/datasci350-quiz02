@@ -1,0 +1,21 @@
+---
+title: "The Bond Films"
+---
+
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+
+films = pd.read_csv("films.csv")
+```
+
+```{python}
+bond = films[films["franchise"] == "James Bond"]
+bond = bond.sort_values("year")
+plt.plot(bond["year"], bond["revenue_musd"])
+plt.xlabel("year")
+plt.ylabel("Revenue (million USD)")
+plt.show()
+```
+
+The dataset covers Bond films from `{python} int(bond["year"].min())` to `{python} int(bond["year"].max())`.

@@ -1,0 +1,25 @@
+touch commands.txt
+quarto create project website .
+
+cat .gitignore
+echo "/_site/" >> .gitignore
+echo "__pycache__/" >> .gitignore
+cat .gitignore
+git add .gitignore
+git commit -m "Add gitignore"
+git log --oneline
+
+cat _quarto.yml
+
+rm about.qmd
+ls
+cat _quarto.yml
+
+touch budget-revenue.qmd
+quarto render budget-revenue.qmd
+
+touch runtime-rating.qmd
+quarto render runtime-rating.qmd
+
+touch bond.qmd
+quarto render bond.qmd
